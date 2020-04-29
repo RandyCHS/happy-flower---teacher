@@ -18,8 +18,7 @@ let mySprite = sprites.create(img`
 . . . . . . . 7 . . . . . . . . 
 . . . . . . . 7 . . . . . . . . 
 `, SpriteKind.Player)
-game.onUpdateInterval(1000, function on_update_interval() {
-    
+game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -38,13 +37,11 @@ game.onUpdateInterval(1000, function on_update_interval() {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, mySprite, Math.randomRange(-70, 70), Math.randomRange(-70, 70))
-    projectile.lifespan = 2000
+    projectile.lifespan = 3000
     if (projectile.vx > 0) {
         projectile.image.flipX()
     }
-    
     if (projectile.vy > 0) {
         projectile.image.flipY()
     }
-    
 })
